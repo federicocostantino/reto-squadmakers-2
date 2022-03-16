@@ -43,7 +43,6 @@
 
   .container {
     width: 100%;
-    background-color: red;
   }
 
   .container header {
@@ -100,7 +99,7 @@
   import axios from 'axios';
 
   export default {
-    name: 'HelloWorld',
+    name: 'All',
 
     data: () => ({
       characters: [],
@@ -114,6 +113,7 @@
       getTodos() {
         axios.get('https://rickandmortyapi.com/api/character')
         .then(response => {
+            console.log(response);
           this.characters = response.data;
         }).catch(e => {
           console.error("Error: " + e);

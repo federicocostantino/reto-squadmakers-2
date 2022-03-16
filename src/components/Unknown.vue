@@ -6,34 +6,34 @@
     </header>
 
     <main id="listado">
-      <div v-for="character in characters.results" :key="character">
-        <v-card>
-          <div class="card__imagen">
-            <img v-bind:src="character.image" alt="">
-          </div>
-          <div class="card__info">
+        <div v-for="character in characters.results" :key="character" v-if="character.gender == 'unknown'">
+            
+            <v-card>
+                <div class="card__imagen">
+                    <img v-bind:src="character.image" v-bind:alt="character.name">
+                </div>
+                <div class="card__info">
+                    <div>
+                        <p> {{character.status}} - {{character.species}} </p>
+                    </div>
 
-            <div>
-              <p> {{character.status}} - {{character.species}} </p>
-            </div>
+                    <div class="card__title">
+                        <p> {{character.name}} </p>
+                    </div>
 
-            <div class="card__title">
-              <p> {{character.name}} </p>
-            </div>
+                    <div>
+                        <p>Last know location:</p>
+                        <p> {{character.location.name}} </p>
+                    </div>
 
-            <div>
-              <p>Last know location:</p>
-              <p> {{character.location.name}} </p>
-            </div>
-
-            <div>
-              <p>First seen in:</p>
-              <p> {{character.origin.name}} </p>
-            </div>
-
-          </div>
-        </v-card>
-      </div>
+                    <div>
+                        <p>First seen in:</p>
+                        <p> {{character.origin.name}} </p>
+                    </div>
+                </div>
+            </v-card>
+            
+        </div>
     </main>
     
   </v-container>
@@ -43,7 +43,6 @@
 
   .container {
     width: 100%;
-    background-color: red;
   }
 
   .container header {
@@ -100,7 +99,7 @@
   import axios from 'axios';
 
   export default {
-    name: 'HelloWorld',
+    name: 'Unknown',
 
     data: () => ({
       characters: [],

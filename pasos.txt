@@ -1,0 +1,9 @@
+npm install -g @vue/cli
+
+vue create nombre-proyecto
+
+cd nombre-proyecto
+
+npm install --save axios vue-axios
+
+vue add vuetify
