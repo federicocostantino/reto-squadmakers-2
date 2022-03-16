@@ -1,4 +1,4 @@
-# reto-squadmakers-2
+# reto-squadmakers
 
 ## Project setup
 ```
